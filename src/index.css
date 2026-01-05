@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans text-neutral-800 bg-neutral-50 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-neutral-900 font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-600 to-accent-500 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-700 hover:to-accent-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-soft hover:shadow-glow transform hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-neutral-50 text-neutral-700 border border-neutral-200 hover:border-neutral-300 font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-soft hover:shadow-soft-lg;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 transition-all duration-200 bg-white placeholder:text-neutral-400;
+  }
+  
+  .nav-link {
+    @apply px-4 py-2 rounded-lg text-neutral-600 hover:text-accent-600 hover:bg-accent-50 transition-all duration-200 font-medium;
+  }
+  
+  .nav-link-active {
+    @apply px-4 py-2 rounded-lg text-accent-600 bg-accent-50 font-medium;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400;
+}
